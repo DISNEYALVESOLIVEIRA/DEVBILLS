@@ -1,5 +1,10 @@
 {
+<<<<<<< HEAD
   "devDependencies": {
     "@biomejs/biome": "2.5.1"
+=======
+  "dependencies": {
+    "react-router": "^7.17.0"
+>>>>>>> 9aafd5f14c2e11d5c3f7dcbea0734eb201938c21
   }
 }
