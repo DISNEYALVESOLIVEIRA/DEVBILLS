@@ -1,4 +1,9 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "projeto-devbills-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arquivo de configuração raiz do monorepo DevBills",
   "devDependencies": {
     "@biomejs/biome": "2.5.1"
   },
