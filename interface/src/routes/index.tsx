@@ -1,4 +1,5 @@
 import Home from "../pages/Home";
+import Login from '../pages/Login';
 import { BrowserRouter, Route, Routes } from "react-router";
 
 const AppRoutes = () => {
@@ -6,6 +7,7 @@ const AppRoutes = () => {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Home />} />
+				<Route path="/login" element={<Login />} />
 				<Route path="*" element={<h2>Página não encontrada</h2>} />
 			</Routes>
 		</BrowserRouter>
