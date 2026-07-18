@@ -3,16 +3,15 @@ import type { JSX } from "react";
 import Button from "../components/Button";
 import { Wallet, TrendingUp, List, CreditCard, } from "lucide-react";
 
+
 interface Feature {
 	icon: JSX.Element;
 	title: string;
 	description: string;
-
-
 }
 
 const Home = () => {
-
+	
 	const features: ReadonlyArray<Feature> = [
 		{
 			icon: <Wallet className="w-8 h-8 text-primary-500" />,
@@ -75,7 +74,7 @@ const Home = () => {
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 							{features.map((feature,) => (
 								<div key={feature.title} className="bg-gray-800 p-6 rounded-xl *:shadow-md *:hover:shadow-lg transition-shadow duration-300">
-									<div className="mb-4 bg-primary-500/10 flex items-center justify-center w-12 h-12 rounded-full bg-gray-700">
+									<div className="mb-4 bg-primary-500/10 flex items-center justify-center w-12 h-12 rounded-full">
 										{feature.icon}
 									</div>
 									<h3 className="text-xl font-sembold text-white mb-2">{feature.title}</h3>
