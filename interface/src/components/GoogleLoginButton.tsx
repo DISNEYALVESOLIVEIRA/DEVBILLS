@@ -8,7 +8,14 @@ interface GoogleLoginButtonProps {
 
 const GoogleLoginButton = ({ isLoading, onClick }: GoogleLoginButtonProps) => {
     return (
-        <Button onClick={onClick} isLoading={isLoading} variant="outline" className="flex items-center justify-center space-x-2">
+        <Button 
+        onClick={onClick} 
+        isLoading={isLoading} 
+        fullWidth
+        variant="success" 
+        className="flex items-center justify-center text-[#051626]"
+        type= "button">
+
             <svg className="h-5 w-5 mr-2" aria-hidden="true" viewBox="0 0 24 24">
                 <path
                     d="M12.0003 4.75C13.7703 4.75 15.3553 5.36 16.6053 6.45L20.0303 3.02C17.9502 1.15 15.2353 0 12.0003 0C7.31031 0 3.25531 2.69 1.28931 6.61L5.27031 9.7C6.21531 6.86 8.87031 4.75 12.0003 4.75Z"
