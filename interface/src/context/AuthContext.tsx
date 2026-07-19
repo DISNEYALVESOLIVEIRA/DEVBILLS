@@ -65,15 +65,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             setAuthState((prev) => ({ ...prev, error: message, loading: false }));
         }
 
-
-
-
     };
-
-    return <AuthContext.Provider value={{ authState, signWithGoogle, signOut }}> {children}</AuthContext.Provider >;
+    
+    return (
+    <AuthContext.Provider value={{ authState, signWithGoogle, signOut }}> 
+    {children}
+    </AuthContext.Provider >
+    );
 };
+
 export const useAuth = () => {
     const context = useContext(AuthContext);
+
     if (!context) {
         throw new Error("useAuth must be used within an AuthProvider");
     }

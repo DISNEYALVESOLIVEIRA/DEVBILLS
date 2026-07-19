@@ -1,17 +1,24 @@
+import { useEffect } from "react";
 import GoogleLoginButton from "../components/GoogleLoginButton";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router";
 
 const Login = () => {
-    const { signWithGoogle } = useAuth();
+    const { signWithGoogle, authState } = useAuth();
+    const navigate = useNavigate();
+
     const handleLogin = async () => {
         try {
-
             await signWithGoogle();
-        } catch (err) {
-            console.error("Erro ao fazer login:", err);
+        } catch (err) { 
+            console.error("Erro ao fazer login com Google:", err);
         }
-
     };
+    useEffect(() => {
+        if (authState.user && !authState.loading) {
+            navigate("/dashboard");
+        }
+    }, [authState.user, authState.loading, navigate]);
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-green-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -37,6 +44,12 @@ const Login = () => {
 
                     <GoogleLoginButton onClick={handleLogin} isLoading={false} />
 
+                    {authState.error && (
+                        <div className="bg-red-50 text-center mt-4 text-red-700 text-sm">
+                            <p>{authState.error} erro no Sistema</p>
+                        </div>
+                    )}
+                    
                     <footer className="mt-6 text-center text-sm text-gray-500">
                         <p className="mt-1 text-gray-600">
                             Ao fazer login, você concorda com nossos termos de serviço e política de privacidade.
